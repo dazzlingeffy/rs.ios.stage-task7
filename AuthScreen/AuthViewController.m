@@ -33,7 +33,20 @@
     // alert
     
     _alert = [UIAlertController alertControllerWithTitle:@"Welcome" message:@"You are successfuly authorized!" preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"Refresh" style:UIAlertActionStyleDestructive handler:nil];
+    UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"Refresh" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * action) {
+        self.loginField.text = @"";
+        self.loginField.layer.borderColor = [[UIColor colorNamed: @"blackCoral"] CGColor];
+        self.passField.text = @"";
+        self.passField.layer.borderColor = [[UIColor colorNamed: @"blackCoral"] CGColor];
+        self.secureField.text = @"_";
+        [self.secureView removeFromSuperview];
+        self.loginField.enabled = YES;
+        self.loginField.alpha = 1;
+        self.passField.enabled = YES;
+        self.passField.alpha = 1;
+        self.authBtn.enabled = YES;
+        self.authBtn.alpha = 1;
+    }];
     [_alert addAction:alertAction];
     
     // Do any additional setup after loading the view.
