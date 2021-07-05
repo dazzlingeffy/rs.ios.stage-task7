@@ -8,7 +8,7 @@
 #import "AuthViewController.h"
 #import "UIButtonBackgroundColor.h"
 
-@interface AuthViewController ()
+@interface AuthViewController () <UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextField *loginField;
 @property (strong, nonatomic) IBOutlet UITextField *passField;
@@ -43,10 +43,12 @@
     _loginField.borderStyle = UITextBorderStyleRoundedRect;
     _loginField.autocorrectionType = UITextAutocorrectionTypeNo;
     _loginField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    _loginField.delegate = self;
     
     _loginField.layer.borderColor = [[UIColor colorNamed: @"blackCoral"] CGColor];
     _loginField.layer.borderWidth = 1.5;
     _loginField.layer.cornerRadius = 5;
+    
     
     [_loginField setCenter: CGPointMake(self.view.center.x, _loginField.center.y)];
     
@@ -62,6 +64,7 @@
     _passField.autocorrectionType = UITextAutocorrectionTypeNo;
     _passField.autocapitalizationType = UITextAutocapitalizationTypeNone;
     _passField.secureTextEntry = YES;
+    _passField.delegate = self;
     
     _passField.layer.borderColor = [[UIColor colorNamed: @"blackCoral"] CGColor];
     _passField.layer.borderWidth = 1.5;
@@ -118,9 +121,20 @@
     }
     if ([login isEqual: @"username"] && [pass isEqual: @"password"]) {
         self.loginField.layer.borderColor = [[UIColor colorNamed: @"turquoiseGreen"] CGColor];
+        self.loginField.enabled = NO;
+        self.loginField.alpha = 0.5;
         self.passField.layer.borderColor = [[UIColor colorNamed: @"turquoiseGreen"] CGColor];
+        self.passField.enabled = NO;
+        self.passField.alpha = 0.5;
+        self.authBtn.enabled = NO;
+        self.authBtn.alpha = 0.4;
     }
     NSLog(@"tap");
+}
+
+-(void)textFieldDidBeginEditing: (UITextField *)textField
+{
+    textField.layer.borderColor = [[UIColor colorNamed: @"blackCoral"] CGColor];
 }
 
 /*
