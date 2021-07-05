@@ -21,9 +21,9 @@
 @end
 
 @interface AuthViewController (KeyboardHandling)
-//- (void)subscribeOnKeyboardEvents;
-//- (void)updateTopContraintWith:(CGFloat) constant andBottom:(CGFloat) bottomConstant;
+
 - (void)hideWhenTappedAround;
+
 @end
 
 @implementation AuthViewController
@@ -48,8 +48,6 @@
         self.authBtn.alpha = 1;
     }];
     [_alert addAction:alertAction];
-    
-    // Do any additional setup after loading the view.
 
     // RSSchool header
     CGFloat headerMargin = self.view.safeAreaInsets.top + 80;
@@ -148,7 +146,7 @@
     
     
     // secure code field
-//    CGFloat secureMargin = btnMargin + 80;
+    
     _secureField = [[UILabel alloc] initWithFrame: CGRectMake(0, 0, 100, 40)];
     _secureField.text = @"_";
     _secureField.font = [UIFont systemFontOfSize:18 weight:UIFontWeightSemibold];
@@ -223,9 +221,7 @@
     [btnStack addArrangedSubview:btnTwo];
     [btnStack addArrangedSubview:btnThree];
     [_secureStack addArrangedSubview:btnStack];
-//    _secureStack.translatesAutoresizingMaskIntoConstraints = false;
     [_secureView addSubview:_secureStack];
-//    [self.view addSubview:_secureView];
     
     [self hideWhenTappedAround];
 }
@@ -311,32 +307,9 @@
     return YES;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end
 
 @implementation AuthViewController (KeyboardHandling)
-
-//- (void)subscribeOnKeyboardEvents {
-//    // Keyboard will show
-//    [NSNotificationCenter.defaultCenter addObserver:self
-//                                           selector:@selector(keybaordWillShow:)
-//                                               name:UIKeyboardWillShowNotification
-//                                             object:nil];
-//    // Keyboard will hide
-//    [NSNotificationCenter.defaultCenter addObserver:self
-//                                           selector:@selector(keybaordWillHide:)
-//                                               name:UIKeyboardWillHideNotification
-//                                             object:nil];
-//}
 
 - (void)hideWhenTappedAround {
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self
@@ -347,24 +320,5 @@
 - (void)hide {
     [self.view endEditing:true];
 }
-
-//- (void)keybaordWillShow:(NSNotification *)notification {
-//    CGRect rect = [(NSValue *)notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
-//
-//    [self updateTopContraintWith:15.0 andBottom:rect.size.height - self.view.safeAreaInsets.bottom + 15.0];
-//}
-
-//- (void)keybaordWillHide:(NSNotification *)notification {
-//    [self updateTopContraintWith:200.0 andBottom:0.0];
-//}
-
-//- (void)updateTopContraintWith:(CGFloat) constant andBottom:(CGFloat) bottomConstant {
-//    // Change your constraint constants
-//    self.topContraint.constant = constant;
-//    self.bottomContraint.constant = bottomConstant;
-//    [UIView animateWithDuration:0.2 animations:^{
-//        [self.view layoutIfNeeded];
-//    }];
-//}
 
 @end
