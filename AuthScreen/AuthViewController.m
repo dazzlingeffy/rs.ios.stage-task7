@@ -16,6 +16,12 @@
 
 @end
 
+@interface AuthViewController (KeyboardHandling)
+//- (void)subscribeOnKeyboardEvents;
+//- (void)updateTopContraintWith:(CGFloat) constant andBottom:(CGFloat) bottomConstant;
+- (void)hideWhenTappedAround;
+@end
+
 @implementation AuthViewController
 
 - (void)viewDidLoad {
@@ -107,6 +113,8 @@
     // auth button action
     
     [_authBtn addTarget:self action:@selector(authBtnTapped:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self hideWhenTappedAround];
 }
 
 - (void)authBtnTapped:(UIButton *)sender {
@@ -137,6 +145,12 @@
     textField.layer.borderColor = [[UIColor colorNamed: @"blackCoral"] CGColor];
 }
 
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
 /*
 #pragma mark - Navigation
 
@@ -146,5 +160,51 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+@end
+
+@implementation AuthViewController (KeyboardHandling)
+
+//- (void)subscribeOnKeyboardEvents {
+//    // Keyboard will show
+//    [NSNotificationCenter.defaultCenter addObserver:self
+//                                           selector:@selector(keybaordWillShow:)
+//                                               name:UIKeyboardWillShowNotification
+//                                             object:nil];
+//    // Keyboard will hide
+//    [NSNotificationCenter.defaultCenter addObserver:self
+//                                           selector:@selector(keybaordWillHide:)
+//                                               name:UIKeyboardWillHideNotification
+//                                             object:nil];
+//}
+
+- (void)hideWhenTappedAround {
+    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                               action:@selector(hide)];
+    [self.view addGestureRecognizer:gesture];
+}
+
+- (void)hide {
+    [self.view endEditing:true];
+}
+
+//- (void)keybaordWillShow:(NSNotification *)notification {
+//    CGRect rect = [(NSValue *)notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+//
+//    [self updateTopContraintWith:15.0 andBottom:rect.size.height - self.view.safeAreaInsets.bottom + 15.0];
+//}
+
+//- (void)keybaordWillHide:(NSNotification *)notification {
+//    [self updateTopContraintWith:200.0 andBottom:0.0];
+//}
+
+//- (void)updateTopContraintWith:(CGFloat) constant andBottom:(CGFloat) bottomConstant {
+//    // Change your constraint constants
+//    self.topContraint.constant = constant;
+//    self.bottomContraint.constant = bottomConstant;
+//    [UIView animateWithDuration:0.2 animations:^{
+//        [self.view layoutIfNeeded];
+//    }];
+//}
 
 @end
