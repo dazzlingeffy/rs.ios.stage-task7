@@ -6,6 +6,7 @@
 //
 
 #import "AppDelegate.h"
+#import "AuthViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,6 +17,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    UIWindow *window = [[UIWindow alloc] init];
+    
+    AuthViewController *rootVC = [[AuthViewController alloc] init];
+    [window setRootViewController: rootVC];
+    
+    self.window = window;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

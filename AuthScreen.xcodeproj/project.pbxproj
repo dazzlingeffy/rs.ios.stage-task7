@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		F76432F02692258C00D3AAB2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F76432EF2692258C00D3AAB2 /* AppDelegate.m */; };
 		F76432F32692258C00D3AAB2 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F76432F22692258C00D3AAB2 /* SceneDelegate.m */; };
-		F76432F62692258C00D3AAB2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F76432F52692258C00D3AAB2 /* ViewController.m */; };
-		F76432F92692258C00D3AAB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F76432F72692258C00D3AAB2 /* Main.storyboard */; };
 		F76432FB2692258F00D3AAB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F76432FA2692258F00D3AAB2 /* Assets.xcassets */; };
 		F76432FE2692258F00D3AAB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F76432FC2692258F00D3AAB2 /* LaunchScreen.storyboard */; };
 		F76433012692258F00D3AAB2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F76433002692258F00D3AAB2 /* main.m */; };
+		F764330926922A2C00D3AAB2 /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F764330826922A2C00D3AAB2 /* AuthViewController.m */; };
+		F764330C2692894600D3AAB2 /* UIButtonBackgroundColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F764330B2692894600D3AAB2 /* UIButtonBackgroundColor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,13 +22,14 @@
 		F76432EF2692258C00D3AAB2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F76432F12692258C00D3AAB2 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		F76432F22692258C00D3AAB2 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		F76432F42692258C00D3AAB2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F76432F52692258C00D3AAB2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		F76432F82692258C00D3AAB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F76432FA2692258F00D3AAB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F76432FD2692258F00D3AAB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F76432FF2692258F00D3AAB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F76433002692258F00D3AAB2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F764330726922A2C00D3AAB2 /* AuthViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthViewController.h; sourceTree = "<group>"; };
+		F764330826922A2C00D3AAB2 /* AuthViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthViewController.m; sourceTree = "<group>"; };
+		F764330A2692894600D3AAB2 /* UIButtonBackgroundColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIButtonBackgroundColor.h; sourceTree = "<group>"; };
+		F764330B2692894600D3AAB2 /* UIButtonBackgroundColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIButtonBackgroundColor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,13 +66,14 @@
 				F76432EF2692258C00D3AAB2 /* AppDelegate.m */,
 				F76432F12692258C00D3AAB2 /* SceneDelegate.h */,
 				F76432F22692258C00D3AAB2 /* SceneDelegate.m */,
-				F76432F42692258C00D3AAB2 /* ViewController.h */,
-				F76432F52692258C00D3AAB2 /* ViewController.m */,
-				F76432F72692258C00D3AAB2 /* Main.storyboard */,
 				F76432FA2692258F00D3AAB2 /* Assets.xcassets */,
 				F76432FC2692258F00D3AAB2 /* LaunchScreen.storyboard */,
 				F76432FF2692258F00D3AAB2 /* Info.plist */,
 				F76433002692258F00D3AAB2 /* main.m */,
+				F764330726922A2C00D3AAB2 /* AuthViewController.h */,
+				F764330826922A2C00D3AAB2 /* AuthViewController.m */,
+				F764330A2692894600D3AAB2 /* UIButtonBackgroundColor.h */,
+				F764330B2692894600D3AAB2 /* UIButtonBackgroundColor.m */,
 			);
 			path = AuthScreen;
 			sourceTree = "<group>";
@@ -134,7 +136,6 @@
 			files = (
 				F76432FE2692258F00D3AAB2 /* LaunchScreen.storyboard in Resources */,
 				F76432FB2692258F00D3AAB2 /* Assets.xcassets in Resources */,
-				F76432F92692258C00D3AAB2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,7 +146,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F76432F62692258C00D3AAB2 /* ViewController.m in Sources */,
+				F764330926922A2C00D3AAB2 /* AuthViewController.m in Sources */,
+				F764330C2692894600D3AAB2 /* UIButtonBackgroundColor.m in Sources */,
 				F76432F02692258C00D3AAB2 /* AppDelegate.m in Sources */,
 				F76433012692258F00D3AAB2 /* main.m in Sources */,
 				F76432F32692258C00D3AAB2 /* SceneDelegate.m in Sources */,
@@ -155,14 +157,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F76432F72692258C00D3AAB2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F76432F82692258C00D3AAB2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F76432FC2692258F00D3AAB2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -294,6 +288,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8S2ZX25A5N;
 				INFOPLIST_FILE = AuthScreen/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,6 +307,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8S2ZX25A5N;
 				INFOPLIST_FILE = AuthScreen/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
