@@ -266,6 +266,27 @@
     }
 }
 
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    if(textField == self.loginField)
+    {
+
+        NSCharacterSet *myCharSet = [NSCharacterSet characterSetWithCharactersInString:@"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"];
+        for (int i = 0; i < [string length]; i++)
+        {
+            unichar c = [string characterAtIndex:i];
+            if (![myCharSet characterIsMember:c])
+            {
+                return NO;
+            }
+        }
+
+        return YES;
+    }
+
+    return YES;
+}
+
 -(void)textFieldDidBeginEditing: (UITextField *)textField
 {
     textField.layer.borderColor = [[UIColor colorNamed: @"blackCoral"] CGColor];
